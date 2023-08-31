@@ -4,9 +4,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 export const config: AppConfig = loadConfigFromEnv();
-
 const address = config.contract_address;
-// const url ="wss://sepolia.infura.io/ws/v3/5596948b219c4f3e832aab7b358797b7"
 
 export function checkProtocol(url: string): any {
   const parsedUrl = new URL(url);
@@ -40,7 +38,7 @@ export async function waitEventEvm(eventName, contract, cb: (e: any) => void) {
       for (let i = 0; i < eventName.length; i++) {
         const events = await contract.queryFilter(eventName[i], height);
         if (events.length > 0) {
-          events.forEach(event =>{filteredEvents.push(event.args);})
+          events.forEach(event =>{filteredEvents.push(event);})
         }
       }
       if (filteredEvents.length > 0) {

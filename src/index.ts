@@ -27,12 +27,11 @@ waitEventEvm(eventName,contractObject, (events) => {
         name: config.event_reciever,
         params: {
           brokers: config.kafka_brokers,
-          event: JSON.stringify(event),
+          event: event,
           topic: config.topic,
           eventProcessor: config.event_processor,
         },
       })
       .then((activation) => console.log(activation));
-    // console.log(JSON.stringify(event))
   });
 }).catch((error) => console.log(error));
