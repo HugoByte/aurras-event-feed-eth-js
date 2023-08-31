@@ -27,7 +27,7 @@ waitEventEvm(eventName,contractObject, (events) => {
         name: config.event_reciever,
         params: {
           brokers: config.kafka_brokers,
-          event: event,
+          event: JSON.stringify(event),
           topic: config.topic,
           eventProcessor: config.event_processor,
         },
