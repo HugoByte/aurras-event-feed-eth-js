@@ -38,7 +38,9 @@ export async function waitEventEvm(eventName, contract, cb: (e: any) => void) {
       for (let i = 0; i < eventName.length; i++) {
         const events = await contract.queryFilter(eventName[i], height);
         if (events.length > 0) {
-          events.forEach(event =>{filteredEvents.push(event);})
+          events.forEach((event) => {
+            filteredEvents.push(event);
+          });
         }
       }
       if (filteredEvents.length > 0) {

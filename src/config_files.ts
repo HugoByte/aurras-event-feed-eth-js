@@ -13,7 +13,7 @@ export interface AppConfig {
   event_reciever: string;
   event_processor: string;
   event_names: string[];
-  topic:string;
+  topic: string;
   abi_path: string;
 }
 
@@ -71,12 +71,12 @@ export function loadConfigFromEnv(): AppConfig {
     contract_address: contractAddress,
     kafka_brokers: kafkaBrokers,
     openwhisk_api_key: openwhiskApiKey,
-    openwhisk_namespace:openwhiskNamespace,
+    openwhisk_namespace: openwhiskNamespace,
     openwhisk_host: openwhiskHost,
     event_reciever: eventReciever,
-    event_processor:eventProcessor,
-    event_names:eventNames,
+    event_processor: eventProcessor,
+    event_names: eventNames,
     topic,
-    abi_path:abiPath,
+    abi_path: abiPath,
   };
 }
