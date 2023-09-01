@@ -16,11 +16,15 @@ const OpenwhiskClinet = openwhisk({
 });
 
 const provide = checkProtocol(config.endpoint);
-const abi =require(config.abi_path);
-const contractObject = new ethers.Contract(config.contract_address, abi, provide);
+const abi = require(config.abi_path);
+const contractObject = new ethers.Contract(
+  config.contract_address,
+  abi,
+  provide
+);
 const eventName = config.event_names;
 
-waitEventEvm(eventName,contractObject, (events) => {
+waitEventEvm(eventName, contractObject, (events) => {
   events.forEach((event) => {
     OpenwhiskClinet.actions
       .invoke({
