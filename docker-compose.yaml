@@ -14,7 +14,7 @@ services:
       - ./local.env
     volumes:
       - ./logs:/logs
-      - ./config:/config
+      - ./config:/app/config
 
 networks:
   default:
