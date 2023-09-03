@@ -28,7 +28,7 @@ npm install
 
 ### Configuration
 
-Configurations are passed through environment variables which can be found [here](/docs/configuration.md).
+Configurations are passed through environment variables.
 
 For local development and testing create a **.env** file with respective configurations in the project root folder.
 
@@ -47,6 +47,7 @@ ABI_PATH=../config/contract.json
 TOPIC=d5654951-1909-493b-bf14-849f22f4d462
 ```
 
+*_Note: Before running the application, copy the contract ABI to config folder_* 
 ### Usage
 
 Start the feed in development mode.
